@@ -14,7 +14,6 @@ document.getElementById('applyBtn').addEventListener('click', function() {
         }
         input.value = '';
         input.style.backgroundColor = 'transparent';
-
         let btn = document.createElement('button');
         let btnName = document.createTextNode('Удалить');
         btn.appendChild(btnName);
@@ -28,9 +27,8 @@ document.getElementById('applyBtn').addEventListener('click', function() {
         var del = event.target;
         if (del.tagName === "BUTTON") {
           del.closest('li').remove();
-        }
-        return false;
-      }
+        } return false;
+    }
 });
 
 
