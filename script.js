@@ -20,16 +20,15 @@ document.getElementById('applyBtn').addEventListener('click', function() {
         li.appendChild(btn);
     } else {
         input.style.backgroundColor = 'red';
-    }
-    
-    ul.onclick = removeItem;
-    function removeItem(event) {
-        var del = event.target;
-        if (del.tagName === "BUTTON") {
-          del.closest('li').remove();
-        } return false;
-    }
+    } 
 });
+
+document.getElementById('list').addEventListener('click', function removeItem(event) {
+    var del = event.target;
+    if (del.tagName === "BUTTON") {
+      del.closest('li').remove();
+    } return false;
+})
 
 
 
