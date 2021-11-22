@@ -19,5 +19,16 @@ ul li {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+    background-color: yellow;
 }
 
+.background {
+    background: green;
+}
+
+
+.btnRemove:hover {
+    background-color: orange;
+    border: 2px solid black;
+    color: black;
+}

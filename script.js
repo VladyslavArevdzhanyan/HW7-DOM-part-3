@@ -8,14 +8,14 @@ document.getElementById('applyBtn').addEventListener('click', function() {
         let liValue = document.createTextNode(input.value);
         li.appendChild(liValue);
         ul.appendChild(li);
-        li.style.backgroundColor = 'yellow';
         li.onclick = function(event) {
-            event.target = li.style.backgroundColor = 'green';
+            event.target = li.classList.toggle('background');
         }
         input.value = '';
         input.style.backgroundColor = 'transparent';
         let btn = document.createElement('button');
         let btnName = document.createTextNode('Удалить');
+        btn.classList.add('btnRemove');
         btn.appendChild(btnName);
         li.appendChild(btn);
     } else {
