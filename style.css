@@ -2,7 +2,7 @@ body {
     background-color: aquamarine;    
 }
 
-.block {
+#block {
     width: 350px;
     height: 500px;
     background-color: white;
