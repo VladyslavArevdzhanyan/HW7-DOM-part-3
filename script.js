@@ -1,23 +1,24 @@
 let input = document.getElementById('inputText');
 let ul = document.getElementById('list');
 let btn = document.getElementById('applyBtn');
+let block = document.getElementById('block');
+
+function createLi(text) {
+    var li = document.createElement('li');
+    li.innerText = text;
+    return li;
+}
+
+function createButton() {
+    let btnRemove = document.createElement('button');
+    btnRemove.innerText = 'Удалить';
+    btnRemove.classList.add('btnRemove');
+    return btnRemove;
+}
 
 btn.addEventListener('click', function() {
     if (input.value) {
-        function create() {
-            let li = document.createElement('li');
-            let liValue = document.createTextNode(input.value);
-            li.appendChild(liValue);
-            ul.appendChild(li);
-
-            let btnRemove = document.createElement('button');
-            let btnName = document.createTextNode('Удалить');
-            btnRemove.classList.add('btnRemove');
-            btnRemove.appendChild(btnName);
-            li.appendChild(btnRemove);
-        }
-        create();
-
+        ul.appendChild(createLi(input.value)).appendChild(createButton());
         input.value = '';
         input.style.backgroundColor = 'transparent';
     } else {
@@ -32,7 +33,6 @@ ul.addEventListener('click', function(event) {
         event.target.parentElement.remove();
     }
 });
-
 
 
 
