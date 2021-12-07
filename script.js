@@ -3,22 +3,19 @@ let ul = document.getElementById('list');
 let btn = document.getElementById('applyBtn');
 let block = document.getElementById('block');
 
-function createLi(text) {
-    var li = document.createElement('li');
+function createLiAndButton(text) {
+    let li = document.createElement('li');
     li.innerText = text;
-    return li;
-}
-
-function createButton() {
     let btnRemove = document.createElement('button');
     btnRemove.innerText = 'Удалить';
     btnRemove.classList.add('btnRemove');
-    return btnRemove;
-}
+    li.appendChild(btnRemove);
+    return li;
+};
 
 btn.addEventListener('click', function() {
     if (input.value) {
-        ul.appendChild(createLi(input.value)).appendChild(createButton());
+        ul.appendChild(createLiAndButton(input.value));
         input.value = '';
         input.style.backgroundColor = 'transparent';
     } else {
